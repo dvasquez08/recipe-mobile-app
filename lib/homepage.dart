@@ -12,7 +12,7 @@ class homepage extends StatefulWidget {
 
 class _homepageState extends State<homepage> {
   TextEditingController _ingredients = TextEditingController();
-  List<String> _recipes = [];
+  List<String> _recipes = [''];
 
   Future<void> _getRecipes() async {
     final response = await http.get(
@@ -42,12 +42,14 @@ class _homepageState extends State<homepage> {
     var heightDevice = MediaQuery.of(context).size.height;
     var widthDevice = MediaQuery.of(context).size.width;
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: Colors.blueGrey,
         appBar: AppBar(
           title: SansText('Recipe Finder', 40.0),
           backgroundColor: Color(0XFF003049),
           centerTitle: true,
+
         ),
         body: ListView(
           children: [
@@ -55,7 +57,7 @@ class _homepageState extends State<homepage> {
 
             Container(
               alignment: Alignment.center,
-              child: Column(
+              child: const Column(
                 children: [
                   SizedBox(height: 25.0),
                   SansText(
@@ -91,7 +93,7 @@ class _homepageState extends State<homepage> {
                   SizedBox(height: 30.0),
                   SizedBox(
                     height: 50.0,
-                    width: 150.0,
+                    width: 200.0,
                     child: MaterialButton(
                       child: SansText('Get Recipes!', 25.0),
                       splashColor: Colors.grey,
@@ -101,19 +103,26 @@ class _homepageState extends State<homepage> {
                       onPressed: _getRecipes,
                     ),
                   ),
+                ],
+              ),
+            ),
+
+            Container(
+              child: Column(
+                children: [
                   Expanded(
                     child: ListView.builder(
                       itemCount: _recipes.length,
                       itemBuilder: (context, index) {
                         return ListTile(
-                        title: Text(_recipes[index]),
+                          title: Text(_recipes[index]),
                         );
                       },
                     ),
                   ),
                 ],
-              ),
-            ),
+              )
+            )
           ],
         ),
       ),
