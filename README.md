@@ -1,16 +1,9 @@
-# recipe_finder
+# Recipe Finder
 
-Recipe Mobile App
+This is the mobile version of my recipe finder that I made before for the web using HTML. CSS and JavaScript
 
-## Getting Started
+For this mobile app version I will be usin Flutter, and the app will be compatible for both Android and iOS.
 
-This project is a starting point for a Flutter application.
+This app is still a work in progress, I will be provind updates on my LinkedIn [here!](https://www.linkedin.com/in/david-vasquez-yeg/)
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
