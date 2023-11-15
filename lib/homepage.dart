@@ -21,20 +21,20 @@ class _homepageState extends State<homepage> {
         '&ingredients=${_ingredients.text}'),
     );
 
-    if (response.statusCode == 200) {
-      final List<String> recipes = json.decode(response.body)
-          .map<String>((recipe) => recipe['title'].toString())
-          .toList();
-    }
-
     // if (response.statusCode == 200) {
-    //   final data = json.decode(response.body);
-    //   setState(() {
-    //     _recipes = List<String>.from(data['recipes']);
-    //   });
-    // } else {
-    //   throw Exception('No recipes found');
+    //   final List<String> recipes = json.decode(response.body)
+    //       .map<String>((recipe) => recipe['title'].toString())
+    //       .toList();
     // }
+
+    if (response.statusCode == 200) {
+      final data = json.decode(response.body);
+      setState(() {
+        _recipes = List<String>.from(data['recipes']);
+      });
+    } else {
+      throw Exception('No recipes found');
+    }
   }
 
   @override
@@ -107,22 +107,24 @@ class _homepageState extends State<homepage> {
               ),
             ),
 
-            Container(
-              child: Column(
-                children: [
-                  Expanded(
-                    child: ListView.builder(
-                      itemCount: _recipes.length,
-                      itemBuilder: (context, index) {
-                        return ListTile(
-                          title: Text(_recipes[index]),
-                        );
-                      },
-                    ),
-                  ),
-                ],
-              )
-            )
+            // Container(
+            //   width: widthDevice / 1.3,
+            //   child: Column(
+            //     crossAxisAlignment: CrossAxisAlignment.center,
+            //     children: [
+            //       Expanded(
+            //         child: ListView.builder(
+            //           itemCount: _recipes.length,
+            //           itemBuilder: (context, index) {
+            //             return ListTile(
+            //               title: Text(_recipes[index]),
+            //             );
+            //           },
+            //         ),
+            //       ),
+            //     ],
+            //   )
+            // ),
           ],
         ),
       ),
