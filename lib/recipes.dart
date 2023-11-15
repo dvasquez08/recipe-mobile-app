@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 class Recipes extends StatefulWidget {
   final List<String> recipes;
+
   Recipes({required this.recipes});
 
   @override
@@ -9,7 +10,13 @@ class Recipes extends StatefulWidget {
 }
 
 class _RecipesState extends State<Recipes> {
-  List<String> _recipes = [" "];
+  late List<String> _recipes = [" "];
+
+  @override
+  void initState() {
+    super.initState();
+    _recipes = widget.recipes;
+  }
 
   @override
   Widget build(BuildContext context) {
