@@ -52,11 +52,14 @@ class _homepageState extends State<homepage> {
         body: Container(
           decoration: const BoxDecoration(
               image: DecorationImage(
-                  image: AssetImage('assets/bg1.jpg'), fit: BoxFit.cover)),
+                  image: AssetImage('assets/bg1.jpg'),
+                  fit: BoxFit.cover)),
           child: ListView(
             children: [
               Container(
+                decoration: BoxDecoration(color: Color.fromRGBO(0, 0, 0, 0.5)),
                 alignment: Alignment.center,
+                padding: EdgeInsets.only(left: 10.0, right: 10.0, top: 8.0, bottom: 8.0),
                 child: const Column(
                   children: [
                     SizedBox(height: 25.0),

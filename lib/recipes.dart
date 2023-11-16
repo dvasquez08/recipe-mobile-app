@@ -30,19 +30,30 @@ class _RecipesState extends State<Recipes> {
         .size
         .width;
     return Scaffold(
-      backgroundColor: Colors.blueGrey,
+      backgroundColor: Colors.transparent,
       appBar: AppBar(
         title: SansText('Recipe Finder', 40.0),
         backgroundColor: Color(0XFF003049),
         centerTitle: true,
       ),
-      body: ListView.builder(
-        itemCount: _recipes.length,
-        itemBuilder: (BuildContext context, int index) {
-          return ListTile(
-            title: SansText(_recipes[index], 15.0),
-          );
-        },
+      body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(image: AssetImage('assets/bg1.jpg'),
+          fit: BoxFit.cover)
+        ),
+        child: Container(
+          decoration: BoxDecoration(
+            color: Color.fromRGBO(0, 0, 0, 0.5)
+          ),
+          child: ListView.builder(
+            itemCount: _recipes.length,
+            itemBuilder: (BuildContext context, int index) {
+              return ListTile(
+                title: SansText(_recipes[index], 20.0),
+              );
+            },
+          ),
+        ),
       ),
     );
   }
