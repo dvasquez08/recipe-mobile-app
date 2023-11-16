@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:recipe_finder/components.dart';
 
 class Recipes extends StatefulWidget {
   final List<String> recipes;
@@ -31,36 +32,18 @@ class _RecipesState extends State<Recipes> {
     return Scaffold(
       backgroundColor: Colors.blueGrey,
       appBar: AppBar(
-        title: Text('Recipes'),
+        title: SansText('Recipe Finder', 40.0),
+        backgroundColor: Color(0XFF003049),
+        centerTitle: true,
       ),
       body: ListView.builder(
         itemCount: _recipes.length,
         itemBuilder: (BuildContext context, int index) {
           return ListTile(
-            title: Text(_recipes[index]),
+            title: SansText(_recipes[index], 15.0),
           );
         },
       ),
     );
   }
 }
-
-
-// Container(
-//     width: widthDevice / 1.3,
-//     child: Column(
-//       crossAxisAlignment: CrossAxisAlignment.center,
-//       children: [
-//         Expanded(
-//           child: ListView.builder(
-//             itemCount: _recipes.length,
-//             itemBuilder: (context, index) {
-//               return ListTile(
-//                 title: Text(_recipes[index]),
-//               );
-//             },
-//           ),
-//         ),
-//       ],
-//     )
-// );

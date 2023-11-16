@@ -24,7 +24,8 @@ class _homepageState extends State<homepage> {
 
     if (response.statusCode == 200) {
       final data = json.decode(response.body);
-      _recipes = List<String>.from(data.map((Recipe) => Recipe['title'].toString()));
+      _recipes =
+          List<String>.from(data.map((Recipe) => Recipe['title'].toString()));
 
       Navigator.push(
         context,
@@ -42,65 +43,71 @@ class _homepageState extends State<homepage> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        backgroundColor: Colors.blueGrey,
+        backgroundColor: Colors.transparent,
         appBar: AppBar(
           title: SansText('Recipe Finder', 40.0),
           backgroundColor: Color(0XFF003049),
           centerTitle: true,
         ),
-        body: ListView(
-          children: [
-            Container(
-              alignment: Alignment.center,
-              child: const Column(
-                children: [
-                  SizedBox(height: 25.0),
-                  SansText(
-                      'Welcome! This app will help you find recipes based on what'
-                      'ingredients you have.Let"\"s get started!',
-                      20.0),
-                  SizedBox(height: 30.0),
-                  SansText(
-                      'Step 1: Check the fridge and see what you have.', 20.0),
-                  SansText(
-                      'Step 2: Type the items that you have in the text box below',
-                      20.0),
-                  SansText('Step 3: Tap on the "Get Recipe" button', 20.0),
-                  SizedBox(height: 30.0),
-                  SansText(
-                      'You will see a list of dishes that you can make with your ingredients. The recipe titles are'
-                      'links which you can tap. When you tap on a recipe title, it will take you to a Google search for that recipe.'
-                      'I hope you find this helpful and that it brings out the inner-chef in you. Happy cooking!',
-                      20.0),
-                ],
+        body: Container(
+          decoration: const BoxDecoration(
+              image: DecorationImage(
+                  image: AssetImage('assets/bg1.jpg'), fit: BoxFit.cover)),
+          child: ListView(
+            children: [
+              Container(
+                alignment: Alignment.center,
+                child: const Column(
+                  children: [
+                    SizedBox(height: 25.0),
+                    SansText(
+                        'Welcome! This app will help you find recipes based on what'
+                        ' ingredients you have. Let\'s get started!',
+                        20.0),
+                    SizedBox(height: 30.0),
+                    SansText('Step 1: Check the fridge and see what you have.',
+                        20.0),
+                    SansText(
+                        'Step 2: Type the items that you have in the text box below',
+                        20.0),
+                    SansText('Step 3: Tap on the "Get Recipe" button', 20.0),
+                    SizedBox(height: 30.0),
+                    SansText(
+                        'You will see a list of dishes that you can make with your ingredients. The recipe titles are'
+                        ' links which you can tap. When you tap on a recipe title, it will take you to a Google search for that recipe.'
+                        'I hope you find this helpful and that it brings out the inner-chef in you. Happy cooking!',
+                        20.0),
+                  ],
+                ),
               ),
-            ),
-            Container(
-              alignment: Alignment.center,
-              child: Column(
-                children: [
-                  SizedBox(height: 30.0),
-                  TextField(
-                    controller: _ingredients,
-                    decoration: InputDecoration(labelText: 'Enter ingredients'),
-                  ),
-                  SizedBox(height: 30.0),
-                  SizedBox(
-                    height: 50.0,
-                    width: 200.0,
-                    child: MaterialButton(
-                      child: SansText('Get Recipes!', 25.0),
-                      splashColor: Colors.grey,
-                      color: Color(0XFF003049),
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10.0)),
-                      onPressed: _getRecipes,
+              Container(
+                alignment: Alignment.center,
+                child: Column(
+                  children: [
+                    SizedBox(height: 30.0),
+                    TextField(
+                      controller: _ingredients,
+                      decoration:
+                          InputDecoration(labelText: 'Enter ingredients'),
                     ),
-                  ),
-                ],
+                    SizedBox(height: 30.0),
+                    SizedBox(
+                      height: 50.0,
+                      width: 200.0,
+                      child: MaterialButton(
+                        child: SansText('Get Recipes!', 25.0),
+                        splashColor: Colors.grey,
+                        color: Color(0XFF003049),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10.0)),
+                        onPressed: _getRecipes,
+                      ),
+                    ),
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
