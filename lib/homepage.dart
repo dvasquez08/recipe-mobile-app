@@ -49,6 +49,8 @@ class _homepageState extends State<homepage> {
           backgroundColor: Color(0XFF003049),
           centerTitle: true,
         ),
+
+
         body: Container(
           decoration: const BoxDecoration(
               image: DecorationImage(
@@ -56,13 +58,17 @@ class _homepageState extends State<homepage> {
                   fit: BoxFit.cover)),
           child: ListView(
             children: [
+
+
               Container(
-                decoration: BoxDecoration(color: Color.fromRGBO(0, 0, 0, 0.5)),
+                decoration: BoxDecoration(
+                  color: Color.fromRGBO(0, 0, 0, 0.5),
+                  borderRadius: BorderRadius.circular(20.0)),
                 alignment: Alignment.center,
                 padding: EdgeInsets.only(left: 10.0, right: 10.0, top: 8.0, bottom: 8.0),
+                margin: EdgeInsets.only(left: 10.0, right: 10.0, top: 10.0),
                 child: const Column(
                   children: [
-                    SizedBox(height: 25.0),
                     SansText(
                         'Welcome! This app will help you find recipes based on what'
                         ' ingredients you have. Let\'s get started!',
@@ -74,15 +80,32 @@ class _homepageState extends State<homepage> {
                         'Step 2: Type the items that you have in the text box below',
                         20.0),
                     SansText('Step 3: Tap on the "Get Recipe" button', 20.0),
-                    SizedBox(height: 30.0),
+                  ],
+
+                ),
+              ),
+
+              SizedBox(height: 20.0),
+
+              Container(
+                decoration: BoxDecoration(
+                    color: Color.fromRGBO(0, 0, 0, 0.5),
+                    borderRadius: BorderRadius.circular(20.0)),
+                alignment: Alignment.center,
+                padding: EdgeInsets.only(left: 10.0, right: 10.0, bottom: 8.0, top: 8.0),
+                margin: EdgeInsets.only(left: 10.0, right: 10.0),
+                child: const Column(
+                  children: [
                     SansText(
                         'You will see a list of dishes that you can make with your ingredients. The recipe titles are'
-                        ' links which you can tap. When you tap on a recipe title, it will take you to a Google search for that recipe.'
-                        'I hope you find this helpful and that it brings out the inner-chef in you. Happy cooking!',
+                            ' links which you can tap. When you tap on a recipe title, it will take you to a Google search for that recipe.'
+                            'I hope you find this helpful and that it brings out the inner-chef in you. Happy cooking!',
                         20.0),
                   ],
                 ),
               ),
+
+
               Container(
                 alignment: Alignment.center,
                 child: Column(
@@ -109,6 +132,8 @@ class _homepageState extends State<homepage> {
                   ],
                 ),
               ),
+
+
             ],
           ),
         ),
