@@ -65,8 +65,8 @@ class _homepageState extends State<homepage> {
                   color: Color.fromRGBO(0, 0, 0, 0.5),
                   borderRadius: BorderRadius.circular(20.0)),
                 alignment: Alignment.center,
-                padding: EdgeInsets.only(left: 10.0, right: 10.0, top: 8.0, bottom: 8.0),
-                margin: EdgeInsets.only(left: 10.0, right: 10.0, top: 10.0),
+                padding: const EdgeInsets.only(left: 10.0, right: 10.0, top: 8.0, bottom: 8.0),
+                margin: const EdgeInsets.only(left: 10.0, right: 10.0, top: 10.0),
                 child: const Column(
                   children: [
                     SansText(
@@ -85,15 +85,17 @@ class _homepageState extends State<homepage> {
                 ),
               ),
 
-              SizedBox(height: 20.0),
+
+              const SizedBox(height: 20.0),
+
 
               Container(
                 decoration: BoxDecoration(
-                    color: Color.fromRGBO(0, 0, 0, 0.5),
+                    color: const Color.fromRGBO(0, 0, 0, 0.5),
                     borderRadius: BorderRadius.circular(20.0)),
                 alignment: Alignment.center,
-                padding: EdgeInsets.only(left: 10.0, right: 10.0, bottom: 8.0, top: 8.0),
-                margin: EdgeInsets.only(left: 10.0, right: 10.0),
+                padding: const EdgeInsets.only(left: 10.0, right: 10.0, bottom: 8.0, top: 8.0),
+                margin: const EdgeInsets.only(left: 10.0, right: 10.0),
                 child: const Column(
                   children: [
                     SansText(
@@ -111,11 +113,15 @@ class _homepageState extends State<homepage> {
                 child: Column(
                   children: [
                     SizedBox(height: 30.0),
+
+
                     TextField(
                       controller: _ingredients,
                       decoration:
                           InputDecoration(labelText: 'Enter ingredients'),
                     ),
+
+
                     SizedBox(height: 30.0),
                     SizedBox(
                       height: 50.0,
