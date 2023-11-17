@@ -42,7 +42,7 @@ class _RecipesState extends State<Recipes> {
           fit: BoxFit.cover)
         ),
         child: Container(
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             color: Color.fromRGBO(0, 0, 0, 0.5)
           ),
           child: ListView.builder(

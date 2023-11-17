@@ -31,7 +31,7 @@ class TextForm extends StatelessWidget {
   @required this.containerWidth,
   @required this.hintText,
   @required this.controller,
-  this.validator})
+  @required this.validator})
   : super (key: key);
 
   @override
@@ -39,13 +39,12 @@ class TextForm extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(text, style: GoogleFonts.openSans(
-            fontSize: 16.0, fontWeight: FontWeight.w300, color: Colors.black
-        )),
         const SizedBox(height: 5.0),
         SizedBox(
           width: containerWidth,
           child: TextFormField(
+            cursorColor: Colors.white,
+            style: GoogleFonts.poppins(fontSize: 14.0, color: Colors.white),
             validator: validator,
             controller: controller,
             decoration: InputDecoration(
@@ -58,15 +57,15 @@ class TextForm extends StatelessWidget {
                 borderRadius: BorderRadius.all(Radius.circular(15.0)),
               ),
               enabledBorder: const OutlineInputBorder(
-                borderSide: BorderSide(color: Colors.indigo),
+                borderSide: BorderSide(color: Colors.green),
                 borderRadius: BorderRadius.all(Radius.circular(10.0)),
               ),
               focusedBorder: const OutlineInputBorder(
-                borderSide: BorderSide(color: Colors.blueGrey, width: 2.0),
+                borderSide: BorderSide(color: Colors.lightGreen, width: 2.0),
                 borderRadius: BorderRadius.all(Radius.circular(15.0)),
               ),
               hintText: hintText,
-              hintStyle: GoogleFonts.poppins(fontSize: 14.0),
+              hintStyle: GoogleFonts.poppins(fontSize: 14.0, color: Colors.white),
             ),
           ),
         ),
