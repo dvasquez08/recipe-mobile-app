@@ -4,14 +4,14 @@ import 'package:http/http.dart' as http;
 import 'package:recipe_finder/recipes.dart';
 import 'dart:convert';
 
-class homepage extends StatefulWidget {
-  const homepage({Key? key}) : super(key: key);
+class HomePage extends StatefulWidget {
+  const HomePage({Key? key}) : super(key: key);
 
   @override
-  State<homepage> createState() => _homepageState();
+  State<HomePage> createState() => _HomePageState();
 }
 
-class _homepageState extends State<homepage> {
+class _HomePageState extends State<HomePage> {
   final TextEditingController _ingredients = TextEditingController();
   final formKey = GlobalKey<FormState>();
   List<String> _recipes = [''];
