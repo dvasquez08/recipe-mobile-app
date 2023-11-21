@@ -79,15 +79,15 @@ class _RecipeDetailsState extends State<RecipeDetails> {
             context: context,
             builder: (BuildContext context) {
               return AlertDialog(
-                title: SansText("Recipe Details", 24.0),
+                title: SansText("Full Recipe:", 24.0),
                 content: SingleChildScrollView(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      TextBlack("Ingredients", 20.0),
+                      TextBlack("Ingredients:", 20.0),
                       SizedBox(height: 20.0),
                       TextBlack(ingredients, 18.0),
-                      TextBlack("Instructions", 20.0),
+                      TextBlack("Instructions:", 20.0),
                       SizedBox(height: 20.0),
                       TextBlack(instructions, 18.0),
                     ],
@@ -122,6 +122,10 @@ class _RecipeDetailsState extends State<RecipeDetails> {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
+          leading: BackButton(
+              onPressed: () => Navigator.of(context).pop(),
+              color: Colors.white
+          ),
           title: SansText('Recipe Finder', 40.0),
           backgroundColor: Color(0XFF003049),
           centerTitle: true,
@@ -140,11 +144,11 @@ class _RecipeDetailsState extends State<RecipeDetails> {
                     var recipe = recipes[index];
                     return Column(
                       children: [
-                        SansText("Recipe Name", 24.0),
+                        SansText("Recipe Name:", 24.0),
                         SansText(recipe['title'], 18.0),
-                        SansText("Minutes to Cook", 24.0),
-                        SansText("${recipe['readyInMinutes']}", 18.0),
-                        SansText("Servings", 24.0),
+                        SansText("Time to Prepare:", 24.0),
+                        SansText("${recipe['readyInMinutes']} Minutes", 18.0),
+                        SansText("Servings:", 24.0),
                         SansText("${recipe['servings']}", 18.0),
                         // SansText("Recipe", 24.0),
                         // SansText("${recipe['sourceUrl']}", 18.0),
