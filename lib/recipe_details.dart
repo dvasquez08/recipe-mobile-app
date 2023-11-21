@@ -57,24 +57,24 @@ class _RecipeDetailsState extends State<RecipeDetails> {
     String instructionsApiUrl = "https://api.spoonacular.com/recipes/$recipeId/information?apiKey=$apiKey";
 
     try {
-      // Fetch ingredients
+      // This part pulls the ingredients for the recipe title
       var ingredientsResponse = await http.get(Uri.parse(ingredientsApiUrl));
       if (ingredientsResponse.statusCode == 200) {
         Map<String, dynamic> ingredientsData = json.decode(ingredientsResponse.body);
 
-        // Handle the case where ingredients may be null or not a List
+        // How to handle the ingredients
         List<dynamic>? ingredientsList = ingredientsData["ingredients"];
         String ingredients = ingredientsList != null && ingredientsList is List
             ? ingredientsList.map<String>((ingredient) => ingredient["name"].toString()).join(", ")
             : "No ingredients available";
 
-        // Fetch instructions
+        // This part pulls the cooking instructions of the selection
         var instructionsResponse = await http.get(Uri.parse(instructionsApiUrl));
         if (instructionsResponse.statusCode == 200) {
           Map<String, dynamic> instructionsData = json.decode(instructionsResponse.body);
           String instructions = instructionsData["instructions"] ?? "No instructions available";
 
-          // Show the dialog with both ingredients and instructions
+          // The part for the dialog box that displays the ingredients and cooking instructions
           showDialog(
             context: context,
             builder: (BuildContext context) {

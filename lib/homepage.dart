@@ -92,8 +92,9 @@ class _HomePageState extends State<HomePage> {
                 child: const Column(
                   children: [
                     SansText(
-                        'You will see a list of dishes that you can make with your ingredients. The recipe titles are'
-                        ' links which you can tap. When you tap on a recipe title, it will take you to a Google search for that recipe.'
+                        'You will see a list of recipes that you can make with your ingredients.'
+                        ' When you tap on a recipe title, you will get a detailed view of that dish.'
+                        ' Tap the "Full Recipe" button and you will get the recipe with cooking instructions.'
                         'I hope you find this helpful and that it brings out the inner-chef in you. Happy cooking!',
                         20.0),
                   ],
