@@ -89,4 +89,30 @@ class TextForm extends StatelessWidget {
   }
 }
 
+class NavButton extends StatelessWidget {
+  final text;
+  final page;
+  const NavButton(this.text, this.page, {Key? key}) : super(key: key);
+
+  @override
+Widget build(BuildContext context) {
+    return SizedBox(
+      height: 50.0,
+      width: 200.0,
+      child: MaterialButton(
+        child: SansText(text, 25.0),
+        splashColor: Colors.grey,
+        color: Color(0XFF003049),
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10.0)),
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => page,),
+          );
+        },
+      ),
+    );
+  }
+}
 
