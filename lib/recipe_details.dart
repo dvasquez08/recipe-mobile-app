@@ -51,8 +51,75 @@ class _RecipeDetailsState extends State<RecipeDetails> {
     }
   }
 
+  Future<void> fetchRecipeDetails(int recipeId) async {
+    String apiKey = "3c8a4c31879e41d18d7c211b35fddc69";
+    String ingredientsApiUrl = "https://api.spoonacular.com/recipes/$recipeId/ingredientWidget.json?apiKey=$apiKey";
+    String instructionsApiUrl = "https://api.spoonacular.com/recipes/$recipeId/information?apiKey=$apiKey";
+
+    try {
+      // Fetch ingredients
+      var ingredientsResponse = await http.get(Uri.parse(ingredientsApiUrl));
+      if (ingredientsResponse.statusCode == 200) {
+        Map<String, dynamic> ingredientsData = json.decode(ingredientsResponse.body);
+
+        // Handle the case where ingredients may be null or not a List
+        List<dynamic>? ingredientsList = ingredientsData["ingredients"];
+        String ingredients = ingredientsList != null && ingredientsList is List
+            ? ingredientsList.map<String>((ingredient) => ingredient["name"].toString()).join(", ")
+            : "No ingredients available";
+
+        // Fetch instructions
+        var instructionsResponse = await http.get(Uri.parse(instructionsApiUrl));
+        if (instructionsResponse.statusCode == 200) {
+          Map<String, dynamic> instructionsData = json.decode(instructionsResponse.body);
+          String instructions = instructionsData["instructions"] ?? "No instructions available";
+
+          // Show the dialog with both ingredients and instructions
+          showDialog(
+            context: context,
+            builder: (BuildContext context) {
+              return AlertDialog(
+                title: SansText("Recipe Details", 24.0),
+                content: SingleChildScrollView(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      TextBlack("Ingredients", 20.0),
+                      SizedBox(height: 20.0),
+                      TextBlack(ingredients, 18.0),
+                      TextBlack("Instructions", 20.0),
+                      SizedBox(height: 20.0),
+                      TextBlack(instructions, 18.0),
+                    ],
+                  ),
+                ),
+                actions: [
+                  TextButton(
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                    child: Text("Close"),
+                  ),
+                ],
+              );
+            },
+          );
+        } else {
+          print("Unable to get instructions. Status code: ${instructionsResponse.statusCode}");
+        }
+      } else {
+        print("Unable to get ingredients. Status code: ${ingredientsResponse.statusCode}");
+      }
+    } catch (error) {
+      print("Error fetching recipe details: $error");
+    }
+  }
+
   Widget build(BuildContext context) {
+    var widthDevice = MediaQuery.of(context).size.width;
+    var heightDevice = MediaQuery.of(context).size.height;
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
           title: SansText('Recipe Finder', 40.0),
@@ -79,10 +146,25 @@ class _RecipeDetailsState extends State<RecipeDetails> {
                         SansText("${recipe['readyInMinutes']}", 18.0),
                         SansText("Servings", 24.0),
                         SansText("${recipe['servings']}", 18.0),
-                        SansText("Recipe", 24.0),
-                        SansText("${recipe['sourceUrl']}", 18.0),
+                        // SansText("Recipe", 24.0),
+                        // SansText("${recipe['sourceUrl']}", 18.0),
                         SansText("Image", 24.0),
-                        Image.network("${recipe['image']}"),
+                        Image.network(
+                          "https://spoonacular.com/recipeImages/${recipe['image']}",
+                          width: widthDevice / 1.3,
+                          height: heightDevice / 3,
+                        ),
+                        SizedBox(height: 15.0),
+                        ElevatedButton(
+                          onPressed: () {
+                            fetchRecipeDetails(recipe["id"]);
+                          },
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Color(0XFF003049)
+                          ),
+                          child: SansText("Full Recipe", 15.0),
+                        ),
+                        SizedBox(height: 15.0),
                       ],
                     );
                   })),

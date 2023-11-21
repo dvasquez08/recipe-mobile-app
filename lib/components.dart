@@ -18,6 +18,21 @@ class SansText extends StatelessWidget {
   }
 }
 
+class TextBlack extends StatelessWidget {
+  final text;
+  final size;
+  const TextBlack(this.text, this.size, {Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      text,
+      style: GoogleFonts.openSans(
+          fontSize: size, fontWeight: FontWeight.w300, color: Colors.black),
+    );
+  }
+}
+
 class TextForm extends StatelessWidget {
   final text;
   final containerWidth;
