@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:recipe_finder/components.dart';
+import 'package:recipe_finder/recipe_details.dart';
 
 class Recipes extends StatefulWidget {
   final List<String> recipes;
@@ -21,14 +22,6 @@ class _RecipesState extends State<Recipes> {
 
   @override
   Widget build(BuildContext context) {
-    var heightDevice = MediaQuery
-        .of(context)
-        .size
-        .height;
-    var widthDevice = MediaQuery
-        .of(context)
-        .size
-        .width;
     return Scaffold(
       backgroundColor: Colors.transparent,
       appBar: AppBar(
@@ -38,18 +31,27 @@ class _RecipesState extends State<Recipes> {
       ),
       body: Container(
         decoration: const BoxDecoration(
-          image: DecorationImage(image: AssetImage('assets/bg1.jpg'),
-          fit: BoxFit.cover)
-        ),
+            image: DecorationImage(
+                image: AssetImage('assets/bg1.jpg'), fit: BoxFit.cover)),
         child: Container(
-          decoration: const BoxDecoration(
-            color: Color.fromRGBO(0, 0, 0, 0.5)
-          ),
+          decoration: const BoxDecoration(color: Color.fromRGBO(0, 0, 0, 0.5)),
           child: ListView.builder(
             itemCount: _recipes.length,
             itemBuilder: (BuildContext context, int index) {
               return ListTile(
-                title: SansText(_recipes[index], 20.0),
+                // title: SansText(_recipes[index], 20.0),
+                title: InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) =>
+                            RecipeDetails(recipeName: _recipes[index]),
+                      ),
+                    );
+                  },
+                  child: SansText(_recipes[index], 20.0),
+                ),
               );
             },
           ),

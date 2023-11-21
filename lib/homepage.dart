@@ -39,7 +39,6 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    var heightDevice = MediaQuery.of(context).size.height;
     var widthDevice = MediaQuery.of(context).size.width;
     return MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -115,10 +114,8 @@ class _HomePageState extends State<HomePage> {
                             if (text.toString().isEmpty) {
                               return "Field is required";
                             }
-                      },
+                          },
                           controller: _ingredients),
-
-
                       SizedBox(height: 30.0),
                       SizedBox(
                         height: 50.0,
