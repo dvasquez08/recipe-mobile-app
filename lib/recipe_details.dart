@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'package:recipe_finder/components.dart';
+import 'package:flutter_html/flutter_html.dart';
 
 class RecipeDetails extends StatefulWidget {
   final String recipeName;
@@ -79,18 +80,22 @@ class _RecipeDetailsState extends State<RecipeDetails> {
             context: context,
             builder: (BuildContext context) {
               return AlertDialog(
-                title: SansText("Full Recipe:", 24.0),
-                content: SingleChildScrollView(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      TextBlack("Ingredients:", 20.0),
-                      SizedBox(height: 20.0),
-                      TextBlack(ingredients, 18.0),
-                      TextBlack("Instructions:", 20.0),
-                      SizedBox(height: 20.0),
-                      TextBlack(instructions, 18.0),
-                    ],
+                title: TextBlack("Full Recipe:", 24.0),
+                content: Container(
+                  width: MediaQuery.of(context).size.width * 0.8,
+                  child: SingleChildScrollView(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        TextBlack("Ingredients:", 20.0),
+                        SizedBox(height: 20.0),
+                        TextBlack(ingredients, 18.0),
+                        SizedBox(height: 20.0),
+                        TextBlack("Instructions:", 20.0),
+                        SizedBox(height: 20.0),
+                        Html(data: instructions),
+                      ],
+                    ),
                   ),
                 ),
                 actions: [
