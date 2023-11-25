@@ -82,7 +82,7 @@ class _RecipeDetailsState extends State<RecipeDetails> {
               return AlertDialog(
                 title: TextBlack("Full Recipe:", 24.0),
                 content: Container(
-                  width: MediaQuery.of(context).size.width * 0.8,
+                  width: MediaQuery.of(context).size.width * 0.7,
                   child: SingleChildScrollView(
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
