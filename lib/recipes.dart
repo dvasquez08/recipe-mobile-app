@@ -25,6 +25,10 @@ class _RecipesState extends State<Recipes> {
     return Scaffold(
       backgroundColor: Colors.transparent,
       appBar: AppBar(
+        leading: BackButton(
+            onPressed: () => Navigator.of(context).pop(),
+            color: Colors.white
+        ),
         title: SansText('Recipe Finder', 40.0),
         backgroundColor: Color(0XFF003049),
         centerTitle: true,

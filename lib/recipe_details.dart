@@ -142,7 +142,7 @@ class _RecipeDetailsState extends State<RecipeDetails> {
           ),
           child: Container(
               decoration:
-                  const BoxDecoration(color: Color.fromRGBO(0, 0, 0, 0.5)),
+              const BoxDecoration(color: Color.fromRGBO(0, 0, 0, 0.5)),
               child: ListView.builder(
                   itemCount: recipes.length,
                   itemBuilder: (context, index) {
@@ -169,7 +169,7 @@ class _RecipeDetailsState extends State<RecipeDetails> {
                             fetchRecipeDetails(recipe["id"]);
                           },
                           style: ElevatedButton.styleFrom(
-                            backgroundColor: Color(0XFF003049)
+                              backgroundColor: Color(0XFF003049)
                           ),
                           child: SansText("Full Recipe", 15.0),
                         ),
