@@ -27,7 +27,6 @@ class _HomePageState extends State<HomePage> {
       final data = json.decode(response.body);
       _recipes =
           List<String>.from(data.map((Recipe) => Recipe['title'].toString()));
-
       Navigator.push(
         context,
         MaterialPageRoute(builder: (context) => Recipes(recipes: _recipes)),
@@ -45,7 +44,7 @@ class _HomePageState extends State<HomePage> {
       home: Scaffold(
         backgroundColor: Colors.transparent,
         appBar: AppBar(
-          title: SansText('Recipe Finder', 40.0),
+          title: SansText('Pocket Recipe', 40.0),
           backgroundColor: Color(0XFF003049),
           centerTitle: true,
         ),
