@@ -1,4 +1,4 @@
-# Recipe Finder
+# Pocket Recipe
 
 This is the mobile version of the sime recipe app that I created for the web. I initially had the same concept for the mobile verions but I built the app, and learned more about what I can do with the Spoonacular API, I decided to push it further and make it much more helpful. This is a more complex version of the app and I am very proud of it. It is still in the works. It is almost complete except for one hiccup that I'm working on. 
 
