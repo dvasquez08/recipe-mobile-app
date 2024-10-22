@@ -10,13 +10,13 @@ The interface is simple. The main page explains how the app works and explains t
 
 This is the first page that appears when you open the app. It explains the steps on how the app works, and it's also the page where the user inputs their ingredients to get the recipes.
 
-![1](https://github.com/user-attachments/assets/8b956c5c-32c3-4ea6-bd0e-eb27d6a9e6f7)
+<img src="https://github.com/user-attachments/assets/aec46910-6bd6-4d3d-9015-880b302b4c1c" alt="1" width="270" height="572"/>
 
 #### Getting Recipes
 
 At the bottom of the main page, there's the text box and the button that the user will interact with. They type their ingredients in the text box, then press the "Get Recipes!" button to get the recipes they want, based on the ingredients they entered.
 
-![2](https://github.com/user-attachments/assets/ea8744ff-ba67-457f-8f50-d9c41c75b597)
+<img src="https://github.com/user-attachments/assets/ea8744ff-ba67-457f-8f50-d9c41c75b597" alt="2" width="270" height="572"/>
 
 ![3](https://github.com/user-attachments/assets/0afcf9e3-8a7d-4063-80d4-9537b30889bc)
 
