@@ -32,8 +32,6 @@ The third page will show more details about the dish that the user slected. It w
 
 <img src="https://github.com/user-attachments/assets/5fad4d0a-1d8b-4261-9d6e-e504ae4ce5e0" alt="5" width="270" height="572"/>
 
-<img src="https://github.com/user-attachments/assets/2f616fbd-a4d9-497b-b6e4-69816490354d" alt="6" width="270" height="572"/>
-
 ### Recipe Dialog Box
 
 When the user taps the "Full Recipe" button, a dialog box will appear that shows the actual recipe of the dish. This will show the ingredients needed, and then it will show the prep and cooking instructions after that. A close button is in the dialog box if the user wants to exit, and select another variant of that dish.
