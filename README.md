@@ -18,31 +18,33 @@ At the bottom of the main page, there's the text box and the button that the use
 
 <img src="https://github.com/user-attachments/assets/ea8744ff-ba67-457f-8f50-d9c41c75b597" alt="2" width="270" height="572"/>
 
-![3](https://github.com/user-attachments/assets/0afcf9e3-8a7d-4063-80d4-9537b30889bc)
+<img src="https://github.com/user-attachments/assets/0afcf9e3-8a7d-4063-80d4-9537b30889bc" alt="3" width="270" height="572"/>
 
 ### Second Page
 
 After the user clicks on the "Get Recipes!" button, they are taken to the second page. This page will list the possible dishes that the user can make, with the ingredients that they entered in the ingredients box in the first page. 
 
-![4](https://github.com/user-attachments/assets/b9c260fa-914c-49ed-922c-2e7b8c148f79)
+<img src="https://github.com/user-attachments/assets/b9c260fa-914c-49ed-922c-2e7b8c148f79" alt="4" width="270" height="572"/>
 
 ### Third Page
 
 The third page will show more details about the dish that the user slected. It will show the recipe name, how long it takes to prepare and the servings, along with an image. More results will show if there are more viariants of this dish.
 
-![5](https://github.com/user-attachments/assets/5fad4d0a-1d8b-4261-9d6e-e504ae4ce5e0)
+<img src="https://github.com/user-attachments/assets/5fad4d0a-1d8b-4261-9d6e-e504ae4ce5e0" alt="5" width="270" height="572"/>
 
-![6](https://github.com/user-attachments/assets/2f616fbd-a4d9-497b-b6e4-69816490354d)
+<img src="https://github.com/user-attachments/assets/2f616fbd-a4d9-497b-b6e4-69816490354d" alt="6" width="270" height="572"/>
 
 ### Recipe Dialog Box
 
 When the user taps the "Full Recipe" button, a dialog box will appear that shows the actual recipe of the dish. This will show the ingredients needed, and then it will show the prep and cooking instructions after that. A close button is in the dialog box if the user wants to exit, and select another variant of that dish.
 
-![7](https://github.com/user-attachments/assets/489d4f4c-8fd7-4aed-9a15-1055e4c8f504)
+<img src="https://github.com/user-attachments/assets/489d4f4c-8fd7-4aed-9a15-1055e4c8f504" alt="7" width="270" height="572"/>
 
 ## What is left
 
+There is a bug with this app that when you tpye in your inggredients, find a recipe in the list, and select it, sometimes you get an empty page. This is due to Spoonacular having empty data for that particular dish. What would be nice would be to show an error message indicating that there's not information for that dish, or better yet, not list the dish at all. This is in the works.
 
+If someone enters ingredients that are, well...not ingredients, then the second page will just show ab empty page. What would I would like to do for this is to show an error message instead, indicating that recipes cannot be found with those ingredients. 
 
 
 
